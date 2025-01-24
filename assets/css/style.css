@@ -1,0 +1,291 @@
+@font-face {
+  font-family: "Maison Neue";
+  src: url("../fonts/maison/MaisonNeue-Light.woff2") format("woff2"),
+    url("../fonts/maison/MaisonNeue-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Maison Neue Book";
+  src: url("../fonts/maison/MaisonNeue-Book.woff2") format("woff2"),
+    url("../fonts/maison/MaisonNeue-Book.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Maison Neue Bold";
+  src: url("../fonts/maison/MaisonNeue-Bold.woff2") format("woff2"),
+    url("../fonts/maison/MaisonNeue-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Maison Neue Mono";
+  src: url("../fonts/maison/MaisonNeue-Mono.woff2") format("woff2"),
+    url("../fonts/maison/MaisonNeue-Mono.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Maison Neue Mono", sans-serif;
+}
+
+p,
+span,
+a {
+  font-family: "Maison Neue", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: "Maison Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: -1px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  color: #ffffff;
+  text-align: left;
+  background-color: #030303;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+/* Loader */
+
+#ftco-loader {
+  position: fixed;
+  width: 96px;
+  height: 96px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-box-shadow: 0px 24px 64px rgba(0, 0, 0, 0.24);
+  box-shadow: 0px 24px 64px rgba(0, 0, 0, 0.24);
+  border-radius: 16px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s ease-out, visibility 0s linear 0.3s;
+  -o-transition: opacity 0.3s ease-out, visibility 0s linear 0.3s;
+  transition: opacity 0.3s ease-out, visibility 0s linear 0.3s;
+  z-index: 1000;
+}
+
+#ftco-loader.fullscreen {
+  padding: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  background-color: #161616;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+#ftco-loader.show {
+  -webkit-transition: opacity 0.4s ease-out, visibility 0s linear 0s;
+  -o-transition: opacity 0.4s ease-out, visibility 0s linear 0s;
+  transition: opacity 0.4s ease-out, visibility 0s linear 0s;
+  visibility: visible;
+  opacity: 1;
+}
+
+#ftco-loader .circular {
+  -webkit-animation: loader-rotate 2s alternate-reverse infinite;
+  animation: loader-rotate 2s alternate-reverse infinite;
+  position: absolute;
+  left: calc(50% - 24px);
+  top: calc(50% - 24px);
+  display: block;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+#ftco-loader .path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  -webkit-animation: loader-dash 1.5s ease-in-out infinite;
+  animation: loader-dash 1.5s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+#ftco-loader img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loader-page {
+  background-color: #030303;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.5s ease-out;
+}
+.loader-container {
+  /* border: 1px solid steelblue; */
+  width: 600px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  width: 50%;
+  max-width: 150px;
+  height: 5px;
+  background-color: #333;
+  position: relative;
+  margin-top: 80px;
+}
+.loader-fill {
+  background-color: rgb(201 57 57);
+  width: 0px;
+  height: 100%;
+  position: absolute;
+  box-shadow: 1px 0px 8px 3px rgba(201, 57, 57, 0.75);
+}
+.loader-counter {
+  position: absolute;
+  font-family: "Maison Neue Mono", serif;
+  font-size: 2rem;
+  font-weight: 300;
+  z-index: 9;
+}
+.panel-box {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: #030303;
+  overflow: hidden;
+}
+.big-panel {
+  height: 630px !important;
+}
+.panel-box .panel-content {
+  content: "";
+  position: absolute;
+  background-color: #030303;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  left: 2px;
+  right: 2px;
+  top: 2px;
+  bottom: 2px;
+  z-index: 2;
+}
+.panel-box:after {
+  content: "";
+  background-image: conic-gradient(#c93939 20deg, transparent 120deg);
+  height: 200%;
+  width: 200%;
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  animation: rotate 12s infinite linear;
+}
+
+/* .panel-box:nth-child(2):after {
+  animation: rotate 12s infinite linear!important;
+} */
+
+/* .panel-box:nth-child(3):after {
+  animation: rotate 8s infinite linear!important;
+} */
+
+.panel-box .panel-content:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* background: radial-gradient(#632a2a1c, transparent); */
+  background: radial-gradient(farthest-corner at top, #360e10 0%, #a12d2d5c 4%, #ad182940 12.25%, #8000172b 31.25%, #b103030d 50%) top center / 100% 100%;
+  animation: panelbg 2s infinite alternate;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #10101080;
+}
+
+.panel-content h5 {
+  background: #2b1c1c;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px 0;
+  color: #ffffff;
+  margin: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.panel-left,
+.panel-right {
+  border: 1px solid #373737;
+  padding: 10px;
+}
+
+@keyframes panelbg {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes loader-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

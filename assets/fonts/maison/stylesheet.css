@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Maison Neue';
+    src: url('MaisonNeue-Light.woff2') format('woff2'),
+        url('MaisonNeue-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue Book';
+    src: url('MaisonNeue-Book.woff2') format('woff2'),
+        url('MaisonNeue-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue';
+    src: url('MaisonNeue-Bold.woff2') format('woff2'),
+        url('MaisonNeue-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Maison Neue';
+    src: url('MaisonNeue-Mono.woff2') format('woff2'),
+        url('MaisonNeue-Mono.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
