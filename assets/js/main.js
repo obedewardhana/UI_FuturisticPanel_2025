@@ -47,25 +47,9 @@ AOS.init();
   };
   fullHeight();
 
-  window.onload = loader;
-    function loader() {
-      let loaderPage = document.querySelector('.loader-page');
-      let counter = document.querySelector('.loader-counter');
-      let fill = document.querySelector('.loader-fill');
-      let amount = 10;
-      let interval = setInterval(loop, 50);
-      function loop() {
-        if (amount >= 100) {
-          clearInterval(interval);
-          loaderPage.style.visibility = 'hidden';
-          loaderPage.style.opacity = '0'
-        }else {
-          amount++;
-          fill.style.width = amount + '%';
-          counter.textContent = amount * 1 + '%';
-        }
-      }
-    }
+  // $(window).on('load',function(){
+  //   $('.panel-content').addClass('flipped');
+  // });
 
   // Scrollax
   $.Scrollax();
@@ -86,7 +70,7 @@ AOS.init();
       ],
       responsive: {
         0: {
-          items: 1
+          items: 1,
         },
         600: {
           items: 2,
@@ -214,46 +198,44 @@ AOS.init();
       );
     },
   };
-  
-$('.counter').countTo();
 
+  $(".counter").countTo();
 
-$(window).scroll(function(){
-    if ($('#achievement').offset().top >= $(window).scrollTop()){
-        $('.counter').countTo('restart'); 
+  $(window).scroll(function () {
+    if ($("#achievement").offset().top >= $(window).scrollTop()) {
+      $(".counter").countTo("restart");
+    } else {
+      //do something else
     }
-    else{
-        //do something else
-    }
-});
+  });
 
-//   var counter = function () {
-//     $("#section-counter, .hero-wrap, .ftco-counter").waypoint(
-//       function (direction) {
-//         if (
-//           direction === "down" &&
-//           !$(this.element).hasClass("ftco-animated")
-//         ) {
-//           var comma_separator_number_step =
-//             $.animateNumber.numberStepFactories.separator(",");
-//           $(".number").each(function () {
-//             var $this = $(this),
-//               num = $this.data("number");
-//             console.log(num);
-//             $this.animateNumber(
-//               {
-//                 number: num,
-//                 numberStep: comma_separator_number_step,
-//               },
-//               7000
-//             );
-//           });
-//         }
-//       },
-//       { offset: "95%" }
-//     );
-//   };
-//   counter();
+  //   var counter = function () {
+  //     $("#section-counter, .hero-wrap, .ftco-counter").waypoint(
+  //       function (direction) {
+  //         if (
+  //           direction === "down" &&
+  //           !$(this.element).hasClass("ftco-animated")
+  //         ) {
+  //           var comma_separator_number_step =
+  //             $.animateNumber.numberStepFactories.separator(",");
+  //           $(".number").each(function () {
+  //             var $this = $(this),
+  //               num = $this.data("number");
+  //             console.log(num);
+  //             $this.animateNumber(
+  //               {
+  //                 number: num,
+  //                 numberStep: comma_separator_number_step,
+  //               },
+  //               7000
+  //             );
+  //           });
+  //         }
+  //       },
+  //       { offset: "95%" }
+  //     );
+  //   };
+  //   counter();
 
   var contentWayPoint = function () {
     var i = 0;
@@ -329,17 +311,16 @@ $(window).scroll(function(){
   $(".navbar-toggler").on("click", function () {
     $(".collapse").toggleClass("slide");
     $("body").toggleClass("overflow-hidden");
-    
   });
-  
-  $(document).click(function(e) {
-        var container = $(".navbar-toggler");
-        if (!container.is(e.target) && container.has(e.target).length === 0) {
-            $(".collapse").removeClass("slide");
-            $(".collapse").removeClass("show");
-            $("body").removeClass("overflow-hidden");
-        }
-    });
+
+  $(document).click(function (e) {
+    var container = $(".navbar-toggler");
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+      $(".collapse").removeClass("slide");
+      $(".collapse").removeClass("show");
+      $("body").removeClass("overflow-hidden");
+    }
+  });
 
   // magnific popup
   $(".image-popup").magnificPopup({
@@ -549,7 +530,7 @@ $(window).scroll(function(){
       "</p> <span class='small'>/hari</span></div>" +
       "</div>" +
       "</div>";
-      
+
     var htmlroom =
       '<div class="detail-car"><img src="' +
       photo +
@@ -570,10 +551,10 @@ $(window).scroll(function(){
       "</div>" +
       "</div>";
 
-    if(wifi != null){
-        $("#detailCar").append(htmlroom);
-    }else{
-        $("#detailCar").append(html);
+    if (wifi != null) {
+      $("#detailCar").append(htmlroom);
+    } else {
+      $("#detailCar").append(html);
     }
 
     $("#fix_location").val(location);
@@ -599,10 +580,10 @@ $(window).scroll(function(){
     $("#fix_pickdate").attr("data-realpick", newpickdate);
     $("#fix_dropdate").attr("data-realdrop", newdropdate);
   });
-  
-  $(".btn-buy").on('click',function(){
-      var paket = $(this).attr('data-id');
-      $('select[name=paket]').val(paket);
+
+  $(".btn-buy").on("click", function () {
+    var paket = $(this).attr("data-id");
+    $("select[name=paket]").val(paket);
   });
 
   $("#confirm-form").validate({
@@ -618,7 +599,7 @@ $(window).scroll(function(){
       },
       paket: {
         required: true,
-      }
+      },
     },
     messages: {
       nama: {
@@ -632,16 +613,18 @@ $(window).scroll(function(){
       },
       paket: {
         required: "*Pilih paket.",
-      }
+      },
     },
     submitHandler: function (form) {
       var form = new FormData();
-      var whatsapp = jQuery(".btn-submit").attr('data-whatsapp');
+      var whatsapp = jQuery(".btn-submit").attr("data-whatsapp");
       var paket = jQuery("select[name=paket]").val();
       var nama = jQuery("input[name=nama]").val();
       var alamat = jQuery("input[name=address]").val();
-      var namapaket = jQuery("select[name=paket]").find(':selected').attr('data-namapaket');
-      
+      var namapaket = jQuery("select[name=paket]")
+        .find(":selected")
+        .attr("data-namapaket");
+
       form.append("nama", jQuery("input[name=nama]").val());
       form.append("paket", jQuery("select[name=paket]").val());
       form.append("handphone", jQuery("input[name=handphone]").val());
@@ -660,7 +643,15 @@ $(window).scroll(function(){
 
             Swal.fire("Pesanan kami terima.", data.msg, "success").then(
               (result) => {
-                window.open('https://wa.me/'+whatsapp+'?text=Halo%20saya%20'+nama+'%20beli%20paket%20'+namapaket,'_blank');
+                window.open(
+                  "https://wa.me/" +
+                    whatsapp +
+                    "?text=Halo%20saya%20" +
+                    nama +
+                    "%20beli%20paket%20" +
+                    namapaket,
+                  "_blank"
+                );
               }
             );
           } else {
@@ -685,7 +676,7 @@ $(window).scroll(function(){
       },
       address: {
         required: true,
-      }
+      },
     },
     messages: {
       name: {
@@ -696,17 +687,24 @@ $(window).scroll(function(){
       },
       address: {
         required: "*Masukkan Alamat.",
-      }
+      },
     },
     submitHandler: function (form) {
       var form = new FormData();
-      var whatsapp = jQuery(".btn-jangkauan").attr('data-whatsapp');
+      var whatsapp = jQuery(".btn-jangkauan").attr("data-whatsapp");
       var phone = jQuery("input[name=phone]").val();
       var nama = jQuery("input[name=name]").val();
       var alamat = jQuery("input[name=address]").val();
 
-      window.open('https://wa.me/'+whatsapp+'?text=Halo%20saya%20'+nama+'%20dengan%20nomer%20'+phone,'_blank');
-
+      window.open(
+        "https://wa.me/" +
+          whatsapp +
+          "?text=Halo%20saya%20" +
+          nama +
+          "%20dengan%20nomer%20" +
+          phone,
+        "_blank"
+      );
     },
     errorPlacement: function (label, element) {
       label.addClass("error");
@@ -716,165 +714,195 @@ $(window).scroll(function(){
 
   // Gradients
 
-//   $("#demo").gradient({
-//     colors: ["#FDC183", "#F2884D", "#FED6AE", "#FBEFE3"],
-//     static: false,
-//   });
-  
+  //   $("#demo").gradient({
+  //     colors: ["#FDC183", "#F2884D", "#FED6AE", "#FBEFE3"],
+  //     static: false,
+  //   });
+
   // Video js
-//   videojs("video-player", {
-//       controls: true,
-//       autoplay: false
-//     });
+  //   videojs("video-player", {
+  //       controls: true,
+  //       autoplay: false
+  //     });
 
+  $("#titlerTicker1").eocjsNewsticker({
+    speed: 20,
+    timeout: 1,
+    divider:
+      '<img src="' +
+      window.location.hostname +
+      '/../template/frontend/assets/images/star.png" class="star-divider">',
+    type: "static",
+  });
 
-$("#titlerTicker1").eocjsNewsticker({
-  speed: 20,
-  timeout: 1,
-  divider:'<img src="'+window.location.hostname+'/../template/frontend/assets/images/star.png" class="star-divider">',
-  type:'static'
-});
-
-$("#titlerTicker2").eocjsNewsticker({
-  speed: 40,
-  timeout: 1,
-  divider:'<img src="'+window.location.hostname+'/../template/frontend/assets/images/star.png" class="star-divider">',
-  type:'static'
-});
-
+  $("#titlerTicker2").eocjsNewsticker({
+    speed: 40,
+    timeout: 1,
+    divider:
+      '<img src="' +
+      window.location.hostname +
+      '/../template/frontend/assets/images/star.png" class="star-divider">',
+    type: "static",
+  });
 
   // Show
 
-  $(window).on('load', function() {
-        if($('body').hasClass('ada-promo')){
-            $('#modalPromo').modal('show');
-        }
+  $(window).on("load", function () {
+    if ($("body").hasClass("ada-promo")) {
+      $("#modalPromo").modal("show");
+    }
   });
-  
-    //   Slider
-    const swiper = new Swiper('.swiper', {
-      // Optional parameters
-      slidesPerView: 5,
-      spaceBetween: 15,
-      freeMode: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+
+  //   Slider
+  const swiper = new Swiper(".swiper", {
+    // Optional parameters
+    slidesPerView: 5,
+    spaceBetween: 15,
+    freeMode: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 15,
       },
-      breakpoints: {
-        320: {
-          slidesPerView: 2,
-          spaceBetween: 15,
-        },
-        480: {
-          slidesPerView: 3,
-          spaceBetween: 15,
-        },
-        640: {
-          slidesPerView: 3,
-          spaceBetween: 15,
-        },
-        768: {
-          slidesPerView: 4,
-          spaceBetween: 15,
-        },
-        991: {
-          slidesPerView: 4,
-          spaceBetween: 15,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 15,
-        },
-        1368: {
-          slidesPerView: 4,
-          spaceBetween: 15,
-        },
-        1440: {
-          slidesPerView: 4,
-          spaceBetween: 15,
-        },
-        1920: {
-          slidesPerView: 5,
-          spaceBetween: 15,
-        },
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 15,
       },
-      // Navigation arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+      640: {
+        slidesPerView: 3,
+        spaceBetween: 15,
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 15,
+      },
+      991: {
+        slidesPerView: 4,
+        spaceBetween: 15,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 15,
+      },
+      1368: {
+        slidesPerView: 4,
+        spaceBetween: 15,
+      },
+      1440: {
+        slidesPerView: 4,
+        spaceBetween: 15,
+      },
+      1920: {
+        slidesPerView: 5,
+        spaceBetween: 15,
+      },
+    },
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  const accordionContent = document.querySelectorAll(".accordion-content");
+
+  accordionContent.forEach((item, index) => {
+    let header = item.querySelector("header");
+    header.addEventListener("click", () => {
+      item.classList.toggle("open");
+
+      let description = item.querySelector(".description");
+      if (item.classList.contains("open")) {
+        description.style.height = `${description.scrollHeight}px`;
+        item.querySelector("i").classList.replace("fa-plus", "fa-minus");
+      } else {
+        description.style.height = "0px";
+        item.querySelector("i").classList.replace("fa-minus", "fa-plus");
       }
-    
+      removeOpen(index);
     });
-    
-    const accordionContent = document.querySelectorAll(".accordion-content");
-
-    accordionContent.forEach((item, index) => {
-        let header = item.querySelector("header");
-        header.addEventListener("click", () =>{
-            item.classList.toggle("open");
-    
-            let description = item.querySelector(".description");
-            if(item.classList.contains("open")){
-                description.style.height = `${description.scrollHeight}px`; 
-                item.querySelector("i").classList.replace("fa-plus", "fa-minus");
-            }else{
-                description.style.height = "0px";
-                item.querySelector("i").classList.replace("fa-minus", "fa-plus");
-            }
-            removeOpen(index); 
-        })
-    })
-    
-    function removeOpen(index1){
-        accordionContent.forEach((item2, index2) => {
-            if(index1 != index2){
-                item2.classList.remove("open");
-    
-                let des = item2.querySelector(".description");
-                des.style.height = "0px";
-                item2.querySelector("i").classList.replace("fa-minus", "fa-plus");
-            }
-        })
-    }
-    $('.nav-icon').click(function(){
-      $(this).toggleClass('open');
-      $('.navigation-panel').toggleClass('open');
-    });
-
-    // Tooltip
-    $('.keycaps-item').tooltip({
-      trigger: 'click',
-      placement: 'top'
-    });
-    
-    function setTooltip(btn, message) {
-      $(btn).tooltip('hide')
-        .attr('data-original-title', message)
-        .tooltip('show');
-    }
-    
-    function hideTooltip(btn) {
-      setTimeout(function() {
-        $(btn).tooltip('hide');
-      }, 1000);
-    }
-
-    // Clipboard
-    var clipboard = new ClipboardJS('.keycaps-item');
-    clipboard.on('success', function(e) {
-      setTooltip(e.trigger, 'Copied!');
-      hideTooltip(e.trigger);
-      // console.info('Action:', e.action);
-      // console.info('Text:', e.text);
-      // console.info('Trigger:', e.trigger);
-      var clone = $(e.trigger).clone();
-      $(clone).appendTo('.cc-cloned');
-  
-      e.clearSelection();
   });
-  clipboard.on('error', function(e) {
-    setTooltip(e.trigger, 'Failed!');
+
+  function removeOpen(index1) {
+    accordionContent.forEach((item2, index2) => {
+      if (index1 != index2) {
+        item2.classList.remove("open");
+
+        let des = item2.querySelector(".description");
+        des.style.height = "0px";
+        item2.querySelector("i").classList.replace("fa-minus", "fa-plus");
+      }
+    });
+  }
+  $(".nav-icon").click(function () {
+    $(this).toggleClass("open");
+    $(".navigation-panel").toggleClass("open");
+  });
+
+  // Tooltip
+  $(".keycaps-item").tooltip({
+    trigger: "click",
+    placement: "top",
+  });
+
+  function setTooltip(btn, message) {
+    $(btn).tooltip("hide").attr("data-original-title", message).tooltip("show");
+  }
+
+  function hideTooltip(btn) {
+    setTimeout(function () {
+      $(btn).tooltip("hide");
+    }, 1000);
+  }
+
+  // Clipboard
+  var clipboard = new ClipboardJS(".keycaps-item");
+  clipboard.on("success", function (e) {
+    setTooltip(e.trigger, "Copied!");
+    hideTooltip(e.trigger);
+    // console.info('Action:', e.action);
+    // console.info('Text:', e.text);
+    // console.info('Trigger:', e.trigger);
+    var clone = $(e.trigger).clone();
+    $(clone).appendTo(".cc-cloned");
+
+    e.clearSelection();
+  });
+  clipboard.on("error", function (e) {
+    setTooltip(e.trigger, "Failed!");
     hideTooltip(e.trigger);
   });
+
+  // Loader
+  window.onload = loader;
+  function loader() {
+    let loaderPage = document.querySelector(".loader-page");
+    let counter = document.querySelector(".loader-counter");
+    let fill = document.querySelector(".loader-fill");
+    let panels = document.querySelectorAll(".panel-content");
+    let amount = 10;
+    let interval = setInterval(loop, 50);
+    function loop() {
+      if (amount >= 100) {
+        clearInterval(interval);
+        loaderPage.style.visibility = "hidden";
+        loaderPage.style.opacity = "0";
+
+        setTimeout(function () {
+          [].forEach.call(panels, (el) => {
+            el.classList.add("flipped");
+          });
+          loadChart();
+        }, 500);
+      } else {
+        amount++;
+        fill.style.width = amount + "%";
+        counter.textContent = amount * 1 + "%";
+      }
+    }
+  }
 })(jQuery);

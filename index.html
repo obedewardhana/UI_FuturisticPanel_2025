@@ -46,6 +46,7 @@
     <link rel="stylesheet" href="assets/css/flaticon.css">
     <link rel="stylesheet" href="assets/css/icomoon.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 
 <body class="">
@@ -72,60 +73,87 @@
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-4 mb-4">
                     <h3 class="text-white text-center">PEMERINTAH KABUPATEN WONOGIRI</h3>
                 </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-6 order-lg-2 order-xl-1 col-xl-3 panel-left">
-                    <div class="panel-box mb-2 " data-aos="zoom-in" data-aos-easing="ease-in-out" data-aos-delay="200">
+                <div
+                    class="col-12 col-sm-6 col-md-6 col-lg-6 order-2 order-sm-2 order-md-2 order-lg-2 order-xl-1 col-xl-3 panel-left">
+                    <div class="panel-box mb-2">
                         <div class="panel-content">
                             <h5>Data Stunting</h5>
+                            <div class="chart-area">
+                                <canvas id="chart1"></canvas>
+                            </div>
                         </div>
                     </div>
                     <div class="panel-box mb-2">
                         <div class="panel-content">
                             <h5>Angka Kemiskinan</h5>
+                            <div class="chart-area">
+                                <canvas id="chart2"></canvas>
+                            </div>
                         </div>
                     </div>
                     <div class="panel-box mb-2">
                         <div class="panel-content">
                             <h5>Sebaran Gender</h5>
+                            <div class="chart-area">
+                                <canvas id="chart3"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 order-lg-1 order-xl-2 col-xl-6 panel-center">
+                <div
+                    class="col-12 col-sm-12 col-md-12 col-lg-12 order-1 order-sm-1 order-md-1 order-lg-1 order-xl-2 col-xl-6 panel-center">
                     <div class="panel-box big-panel mb-2">
                         <div class="panel-content">
                             <h5>MAP</h5>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                             <div class="panel-box mb-2">
                                 <div class="panel-content">
                                     <h5>Masyarakat Rantau</h5>
+                                    <div class="chart-area">
+                                        <canvas id="chart4"></canvas>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                             <div class="panel-box mb-2">
                                 <div class="panel-content">
                                     <h5>Indeks Kepuasan Masyarakat</h5>
+                                    <div class="chart-area">
+                                        <canvas id="chart5"></canvas>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-3 order-lg-3 order-xl-3 panel-right">
+                <div
+                    class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 order-3 order-sm-3 order-md-3 order-lg-3 order-xl-3 panel-right">
                     <div class="panel-box mb-2">
                         <div class="panel-content">
                             <h5>Jumlah RTH</h5>
+                            <div class="chart-area">
+                                <canvas id="chart6"></canvas>
+                            </div>
                         </div>
                     </div>
                     <div class="panel-box mb-2">
                         <div class="panel-content">
                             <h5>Pendidikan Penduduk</h5>
+                            <div class="chart-area">
+                                <canvas id="chart7"></canvas>
+                            </div>
                         </div>
                     </div>
                     <div class="panel-box mb-2">
                         <div class="panel-content">
                             <h5>Tingkat Pengangguran</h5>
+                            <div class="chart-area">
+                                <canvas id="chart8"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -161,7 +189,9 @@
     <script src="assets/js/bootstrap-datepicker.js"></script>
     <script src="assets/js/jquery.timepicker.min.js"></script>
     <script src="assets/js/scrollax.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>        
+    <script src="assets/js/visualization-chart.js" type="module"></script>
     <script src="assets/js/main.js"></script>
 
 </body>
