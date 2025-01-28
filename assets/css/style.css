@@ -59,6 +59,7 @@ body {
   color: #ffffff;
   text-align: left;
   background-color: #030303;
+  position: relative;
 }
 
 .text-white {
@@ -145,8 +146,8 @@ body {
 .loader-page {
   background-color: #030303;
   position: fixed;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   z-index: 9999;
   top: 0;
   left: 0;
@@ -156,12 +157,8 @@ body {
 }
 .loader-container {
   /* border: 1px solid steelblue; */
-  width: 600px;
-  height: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -239,7 +236,6 @@ body {
       farthest-corner at top,
       #360e10 0%,
       #a12d2d5c 4%,
-
       #ad182940 12.25%,
       #8000172b 31.25%,
       #b103030d 50%
@@ -253,7 +249,7 @@ body {
 }
 
 .panel-content h5 {
-  background: rgb(43, 28, 28, .5);
+  background: rgb(43, 28, 28, 0.5);
   text-align: center;
   text-transform: uppercase;
   padding: 5px 0;
@@ -362,12 +358,18 @@ div#mymap {
 }
 
 .popupCustom .leaflet-content-text h4 {
+  margin-bottom: 0px;
+  margin-top: 0px;
   width: 40%;
+}
+
+.popupCustom .leaflet-content-text {
+  margin-top: 8px;
 }
 
 .popupCustom .leaflet-content-text p {
   width: 60%;
-  margin:0;
+  margin: 0;
 }
 
 .popupCustom .leaflet-popup-close-button span {
@@ -383,6 +385,79 @@ div#mymap {
   backdrop-filter: blur(7px);
 }
 
+.title-central{
+  height: 100px;
+}
+
+.title-central h3{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title-central h3{
+  opacity: 0;
+  white-space: nowrap;
+}
+
+.title-central.open-central h3{
+  opacity: 1;
+  white-space: nowrap;
+}
+
+.title-central.open-central {
+  background: linear-gradient(359deg, #c9393945, #c9393914);
+  padding: 20px 0;
+  border-top: 1.5px solid #c93939;
+  border-bottom: 1.5px solid #c93939;
+  width: 3px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  animation: opencentral 1s normal forwards ease-in-out;
+}
+
+.title-central.open-central:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  height: 2px;
+  background: #c93939;
+  top: 0px;
+  left: 50%;
+  z-index: 4;
+  width: 25%;
+  transform: translateX(-50%);
+}
+
+/* .title-central.open-central:after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  background: red;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  background: linear-gradient(121deg, #e90000, transparent);
+  background-size: 22px 1px;
+} */
+
+@keyframes opencentral {
+  from {
+    width: 3px;
+    border-left: 2px solid #c93939;
+    border-right: 2px solid #c93939;
+    color: unset;
+  }
+  to {
+    width: 100%;
+    border-left: 1.5px solid transparent;
+    border-right: 1.5px solid transparent;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff;
+  }
+}
 
 @keyframes flipped {
   from {
@@ -393,7 +468,7 @@ div#mymap {
   to {
     transform: scaleY(1);
     opacity: 1;
-    background-color: rgb(43, 28, 28, .5);
+    background-color: rgb(43, 28, 28, 0.5);
   }
 }
 

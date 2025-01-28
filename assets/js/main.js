@@ -883,6 +883,7 @@ AOS.init();
     let loaderPage = document.querySelector(".loader-page");
     let counter = document.querySelector(".loader-counter");
     let fill = document.querySelector(".loader-fill");
+    let tc = document.querySelector(".title-central");
     let panels = document.querySelectorAll(".panel-content");
     let amount = 10;
     let interval = setInterval(loop, 50);
@@ -893,6 +894,7 @@ AOS.init();
         loaderPage.style.opacity = "0";
 
         setTimeout(function () {
+          tc.classList.add("open-central");
           [].forEach.call(panels, (el) => {
             el.classList.add("flipped");
           });

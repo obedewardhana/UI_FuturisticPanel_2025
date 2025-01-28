@@ -40,6 +40,11 @@
   .panel-box:not(.big-panel) {
     height: 300px;
   }
+  .title-central h3,
+  .title-central.open-central h3{
+    opacity: 1;
+    white-space: wrap;
+  }
 }
 
 @media screen and (max-width: 300px) {
