@@ -375,6 +375,14 @@ div#mymap {
   font-size: 25px;
 }
 
+.popupCustom .leaflet-popup-content-wrapper {
+  box-shadow: unset;
+  border: 1px solid #ec5b7a;
+  border-radius: 5px;
+  background: rgb(255 255 255 / 70%);
+  backdrop-filter: blur(7px);
+}
+
 
 @keyframes flipped {
   from {

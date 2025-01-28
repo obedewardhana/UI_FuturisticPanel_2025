@@ -188,9 +188,10 @@
 
   // Format Geojson
 
+
   var loc = location + "/assets/js/wonogiri.geojson";
 
-  var geojson = new L.GeoJSON.AJAX(loc);
+  var geojson = new L.GeoJSON.AJAX(loc, { style: {color: '#ec5b7a', weight: 3} });
   geojson.on("data:loaded", function () {
     geojson.addTo(mymap);
   });
