@@ -239,6 +239,7 @@ body {
       farthest-corner at top,
       #360e10 0%,
       #a12d2d5c 4%,
+
       #ad182940 12.25%,
       #8000172b 31.25%,
       #b103030d 50%
@@ -252,7 +253,7 @@ body {
 }
 
 .panel-content h5 {
-  background: #2b1c1c;
+  background: rgb(43, 28, 28, .5);
   text-align: center;
   text-transform: uppercase;
   padding: 5px 0;
@@ -264,12 +265,13 @@ body {
   transition: 0.2s all ease-in-out;
   -webkit-transition: 0.2s all ease-in-out;
   -moz-transition: 0.2s all ease-in-out;
+  backdrop-filter: blur(3px);
 }
 
-.panel-content .chart-area{
+.panel-content .chart-area {
   display: block;
   width: 100%;
-  padding:0 5px;
+  padding: 0 5px;
   z-index: 2;
   position: relative;
 }
@@ -309,6 +311,70 @@ body {
   border: 1px solid #373737;
   padding: 10px;
 }
+
+div#mymap {
+  display: block;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Leaflet */
+
+.leaflet-control-zoom.leaflet-bar.leaflet-control {
+  top: 40px;
+}
+
+.popupCustom {
+  width: 300px;
+  z-index: 22;
+}
+
+.popupCustom .leaflet-content-text h4 {
+  margin-top: 10px;
+  font-size: 16px;
+  font-family: "Maison Neue Bold";
+}
+
+.popupCustom .leaflet-popup-content {
+  margin: 5px;
+}
+
+.popupCustom .leaflet-content-image img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
+
+.popupCustom .leaflet-content-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.popupCustom .leaflet-content-text {
+  display: flex;
+  align-items: center;
+}
+
+.popupCustom .leaflet-content-text h4 {
+  width: 40%;
+}
+
+.popupCustom .leaflet-content-text p {
+  width: 60%;
+  margin:0;
+}
+
+.popupCustom .leaflet-popup-close-button span {
+  color: #ffffff;
+  font-size: 25px;
+}
+
 
 @keyframes flipped {
   from {

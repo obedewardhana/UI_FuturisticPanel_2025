@@ -261,7 +261,7 @@
         datasets: [
           {
             label: "Jumlah",
-            data: [12, 19, 5, 8],
+            data: [12, 19, 5 ,4],
             backgroundColor: [
                 "rgba(255, 99, 132, 0.2)",
                 "rgba(54, 162, 235, 0.2)",
