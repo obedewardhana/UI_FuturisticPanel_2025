@@ -385,7 +385,7 @@ div#mymap {
   to {
     transform: scaleY(1);
     opacity: 1;
-    background-color: #2b1c1c;
+    background-color: rgb(43, 28, 28, .5);
   }
 }
 
